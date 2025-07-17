@@ -1,7 +1,72 @@
+/* Сбрасываем базовые отступы и ставим box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Тело сайта */
 body {
-  background-color: #121212;
-  color: #00ffcc;
-  font-family: monospace;
+  background-color: #121212;      /* Тёмный фон */
+  color: #00ffcc;                 /* Яркий циан для текста */
+  font-family: 'Courier New', monospace;  /* Крутой моноширинный шрифт */
+  line-height: 1.6;
   padding: 20px;
 }
 
+/* Хедер */
+header {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Заголовки */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #00cccc;
+  margin-bottom: 15px;
+}
+
+/* Ссылки */
+a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #66ffcc;
+  text-decoration: underline;
+}
+
+/* Секции */
+section {
+  margin-bottom: 40px;
+}
+
+/* Список проектов */
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+/* Футер */
+footer {
+  text-align: center;
+  color: #444;
+  font-size: 0.9rem;
+  padding: 20px 0;
+  border-top: 1px solid #222;
+  margin-top: 40px;
+}
