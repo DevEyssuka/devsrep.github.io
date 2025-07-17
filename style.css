@@ -1,56 +1,28 @@
-body {
+.project {
+  background-color: #1a1a1a;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid #0ff;
+  border-radius: 8px;
+}
+
+.project h3 {
   margin: 0;
-  padding: 0;
-  background-color: #0d0d0d;
-  color: #e0e0e0;
-  font-family: 'JetBrains Mono', monospace;
-  line-height: 1.6;
+  color: #fff;
 }
 
-.container {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 20px;
-  background: #121212;
-  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
-  border-radius: 12px;
-}
-
-h1 {
-  font-size: 2.5em;
-  color: #0ff;
-  margin-bottom: 10px;
-}
-
-h2 {
-  color: #ff00ff;
-  margin-top: 30px;
-}
-
-a {
+.project a {
+  display: inline-block;
+  margin-top: 8px;
   color: #0ff;
   text-decoration: none;
-  border-bottom: 1px dashed #0ff;
+  font-weight: bold;
 }
 
-a:hover {
-  color: #fff;
+.project a:hover {
   background: #0ff;
-  padding: 2px 4px;
+  color: #000;
+  padding: 2px 6px;
   border-radius: 4px;
-}
-
-.highlight {
-  color: #ff00ff;
-}
-
-.section {
-  margin-top: 30px;
-  padding-left: 10px;
-  border-left: 2px solid #0ff;
-}
-
-ul {
-  list-style: square;
 }
 
