@@ -110,6 +110,19 @@ footer {
   color: #888;
 }
 
+/* Водяной знак справа внизу */
+.watermark {
+  position: fixed;
+  bottom: 8px;
+  right: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  user-select: none;
+  z-index: 9999;
+}
+
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
