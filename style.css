@@ -1,28 +1,44 @@
-.project {
-  background-color: #1a1a1a;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-left: 4px solid #0ff;
-  border-radius: 8px;
-}
-
-.project h3 {
+body {
   margin: 0;
-  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  background: #0e0e0e;
+  color: #f0f0f0;
+  padding: 2rem;
 }
 
-.project a {
-  display: inline-block;
-  margin-top: 8px;
-  color: #0ff;
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+h1, h2 {
+  color: #00ffd5;
+}
+
+.highlight {
+  color: #ff00cc;
+}
+
+a {
+  color: #ffb700;
   text-decoration: none;
-  font-weight: bold;
 }
 
-.project a:hover {
-  background: #0ff;
-  color: #000;
-  padding: 2px 6px;
-  border-radius: 4px;
+a:hover {
+  text-decoration: underline;
 }
+
+.section {
+  margin-top: 2rem;
+}
+
+ul {
+  list-style-type: "📁 ";
+  padding-left: 1.5rem;
+}
+
+.project {
+  margin: 0.5rem 0;
+}
+
 
