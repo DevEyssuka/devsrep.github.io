@@ -1,17 +1,44 @@
-echo '<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DevEyssuka Portfolio</title>
-  <style>
-    body { background: #121212; color: #0ff; font-family: monospace; padding: 20px; }
-    a { color: #0ff; }
-  </style>
+  <title>DevEyssuka | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Привет, я Dev!</h1>
-  <p>Это моё портфолио, брат.</p>
-  <p><a href="https://github.com/DevEyssuka">Мой GitHub</a></p>
+  <header>
+    <h1>Привет, я Dev 👾</h1>
+    <nav>
+      <a href="#projects">Проекты</a>
+      <a href="#about">Обо мне</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="projects">
+      <h2>Мои проекты</h2>
+      <div class="project-list">
+        <!-- сюда будем кидать проекты -->
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>Обо мне</h2>
+      <p>Геймдев, фронтенд и просто чувак с опытом. Люблю кофе и кодить.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Контакты</h2>
+      <p>Email: dev@example.com</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 DevEyssuka. Сделано с кофе и кодом ☕️💻</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
-</html>' > index.html
+</html>
