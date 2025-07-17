@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DevEyssuka Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,20 +16,23 @@
     </nav>
 
     <section id="author" class="tab-content active">
-      <h1>👾 Привет, я <span class="highlight">Dev</span></h1>
-      <p>Я 16-летний геймдев-маньяк, фронтенд хакер и создатель <strong>S.U.B.J.E.C.T.S</strong> — мрачного мира, где игроки ловят существ из других измерений.</p>
-      <p>Мечтал стать нейрохирургом, но выбрал код. Сейчас ищу работу и прокачиваюсь по полной.</p>
+      <h1>👾 Hi, it's <span class="highlight">DevEyes</span></h1>
+      <p>I'm 16 years old.</p>
+      <p>I'm frontend / backend / fullstack developer.</p>
+      <p>I make games, but I make them special with a great idea and my mania to create.</p>
+      <p>I once dreamed of becoming a neurosurgeon; now I'm trying to treat people through a different path.</p>
+      
       <div class="section">
-        <h2>Контакты</h2>
-        <p><strong>Email:</strong> <a href="mailto:dev.eyssuka@gmail.com">dev.eyssuka@gmail.com</a></p>
+        <h2>Contacts</h2>
+        <p><strong>Email:</strong> <a href="mailto:gamer0ignis0black@gmail.com">gamer0ignis0black@gmail.com</a></p>
         <p><strong>GitHub:</strong> <a href="https://github.com/DevEyssuka" target="_blank">github.com/DevEyssuka</a></p>
-        <p><strong>Discord:</strong> dev.eyssuka</p>
-        <p><strong>Telegram:</strong> <a href="https://t.me/deveyssuka" target="_blank">@deveyssuka</a></p>
+        <p><strong>Discord:</strong> dev_eyes</p>
+        <p><strong>Telegram:</strong> <a href="https://t.me/deveyssuka" target="_blank">@Dev_eyes</a></p>
       </div>
     </section>
 
     <section id="projects" class="tab-content">
-      <h2>🚀 Мои проекты</h2>
+      <h2>🚀 That’s my Projects Board:</h2>
       <ul class="project-list">
         <li>
           <button class="project-button" data-project="subjects">S.U.B.J.E.C.T.S</button>
@@ -43,22 +46,21 @@
     </section>
 
     <footer>
-      <p>🌀 Developed by <strong>DEV EYES</strong> © 2025</p>
+      <p> Developed by <strong>DEV EYES</strong> © 2025</p>
     </footer>
   </div>
 
+  <div class="watermark">Developed by DEV EYES © 2025</div>
+
   <script>
-    // Переключение табов
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
     tabButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Активный таб кнопка
         tabButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // Показ нужного контента
         const target = btn.dataset.tab;
         tabContents.forEach(c => {
           c.id === target ? c.classList.add('active') : c.classList.remove('active');
@@ -66,7 +68,6 @@
       });
     });
 
-    // Проекты - аккордеон
     const projectButtons = document.querySelectorAll('.project-button');
 
     projectButtons.forEach(button => {
@@ -82,6 +83,10 @@
         }
       });
     });
+  </script>
+</body>
+</html>
+
   </script>
 </body>
 </html>
