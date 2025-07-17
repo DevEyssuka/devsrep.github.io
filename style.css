@@ -1,9 +1,69 @@
-/* Контейнер для логотипа с прозрачной панелью */
+/* Сброс и базовые стили */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #121212;
+  color: #0ff;
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #121212;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+}
+
+/* Вкладки */
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.tab-button {
+  background: transparent;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-size: 18px;
+  padding-bottom: 8px;
+  transition: color 0.3s, border-bottom 0.3s;
+  outline: none;
+}
+.tab-button.active {
+  color: #0ff;
+  border-bottom: 3px solid #0ff;
+  font-weight: 700;
+}
+.tab-button:hover:not(.active) {
+  color: #33ffff;
+}
+
+/* Секции */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Лого с прозрачной панелью */
 .logo {
   width: 80px;
-  height: auto;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   border-radius: 12px;
   padding: 10px;
   background: rgba(18, 18, 18, 0.6);
@@ -12,7 +72,55 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Ватермарк внизу справа */
+/* Раздел контактов */
+.section h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 700;
+}
+a {
+  color: #0ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #33ffff;
+}
+
+/* Список проектов */
+.project-list {
+  list-style: none;
+  padding-left: 0;
+}
+.project-list li {
+  margin-bottom: 15px;
+}
+.project-button {
+  background: transparent;
+  border: 2px solid #0ff;
+  color: #0ff;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  outline: none;
+}
+.project-button.opened, .project-button:hover {
+  background: #0ff;
+  color: #121212;
+}
+.project-details {
+  margin-top: 10px;
+  padding-left: 15px;
+  border-left: 2px solid #0ff;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Ватермарк */
 .watermark {
   position: fixed;
   bottom: 10px;
@@ -24,48 +132,6 @@
   pointer-events: none;
   z-index: 1000;
   text-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
-}
-
-/* Для активных табов и остального, если нужно */
-.tab-button.active {
-  border-bottom: 2px solid #0ff;
-  color: #0ff;
-}
-
-/* Контейнер */
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  color: #0ff;
-  font-family: 'JetBrains Mono', monospace;
-  background: #121212;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
-}
-
-/* Чтоб табы выглядели по кайфу */
-.tabs {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.tab-button {
-  background: transparent;
-  border: none;
-  color: #555;
-  cursor: pointer;
-  font-size: 16px;
-  padding-bottom: 6px;
-  transition: color 0.3s, border-bottom 0.3s;
-}
-
-.tab-button:hover {
-  color: #0ff;
-}
-
-  to {opacity: 1;}
 }
 
 
