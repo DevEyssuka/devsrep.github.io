@@ -4,8 +4,144 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DevEyssuka Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=4" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
+  <style>
+    /* Сброс и базовые стили */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #121212;
+      color: #0ff;
+      font-family: 'JetBrains Mono', monospace;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #121212;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+    }
+
+    /* Вкладки */
+    .tabs {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .tab-button {
+      background: transparent;
+      border: none;
+      color: #555;
+      cursor: pointer;
+      font-size: 18px;
+      padding-bottom: 8px;
+      transition: color 0.3s, border-bottom 0.3s;
+      outline: none;
+    }
+    .tab-button.active {
+      color: #0ff;
+      border-bottom: 3px solid #0ff;
+      font-weight: 700;
+    }
+    .tab-button:hover:not(.active) {
+      color: #33ffff;
+    }
+
+    /* Секции */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Лого с прозрачной панелью */
+    .logo {
+      width: 80px;
+      display: block;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      padding: 10px;
+      background: rgba(18, 18, 18, 0.6);
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Раздел контактов */
+    .section h2 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    a {
+      color: #0ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #33ffff;
+    }
+
+    /* Список проектов */
+    .project-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .project-list li {
+      margin-bottom: 15px;
+    }
+    .project-button {
+      background: transparent;
+      border: 2px solid #0ff;
+      color: #0ff;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      outline: none;
+    }
+    .project-button.opened, .project-button:hover {
+      background: #0ff;
+      color: #121212;
+    }
+    .project-details {
+      margin-top: 10px;
+      padding-left: 15px;
+      border-left: 2px solid #0ff;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    /* Ватермарк */
+    .watermark {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 12px;
+      color: rgba(0, 255, 255, 0.4);
+      font-family: 'JetBrains Mono', monospace;
+      user-select: none;
+      pointer-events: none;
+      z-index: 1000;
+      text-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -16,7 +152,7 @@
     </nav>
 
     <section id="author" class="tab-content active">
-      <img src="assets/devlogo.png" alt="DevEyes Logo" class="logo" /> 
+      <img src="assets/devlogo.png" alt="DevEyes Logo" class="logo" />
       <h1>👾 Hi, it's <span class="highlight">DevEyes</span></h1>
       <p>I'm 16 years old.</p>
       <p>I'm frontend / backend / fullstack developer.</p>
@@ -38,22 +174,20 @@
         <li>
           <button class="project-button" data-project="subjects">S.U.B.J.E.C.T.S</button>
           <div class="project-details" id="subjects" hidden>
-            <p>S.U.B.J.E.C.T.S will immerse you in a trip of your desires and envelop you in the darkness of the omnipresent company A.R.C </p>
-            <p>YOU are one of hundreds of people called Dead Rider, choose your operative and work for the company A.R.C</p>
+            <p>S.U.B.J.E.C.T.S will immerse you in a trip of your desires and envelop you in the darkness of the omnipresent company A.R.C.</p>
+            <p>YOU are one of hundreds of people called Dead Rider, choose your operative and work for the company A.R.C.</p>
             <p>Work in Progress</p>
           </div> 
         </li>
       </ul>
     </section>
 
-    <footer>
-      <p> Developed by <strong>DEV EYES</strong> © 2025</p>
-    </footer>
   </div>
 
   <div class="watermark">Developed by DEV EYES © 2025</div>
 
   <script>
+    // Переключение вкладок
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -69,6 +203,7 @@
       });
     });
 
+    // Показ/скрытие описания проекта
     const projectButtons = document.querySelectorAll('.project-button');
 
     projectButtons.forEach(button => {
@@ -87,8 +222,3 @@
   </script>
 </body>
 </html>
-
-  </script>
-</body>
-</html>
-
