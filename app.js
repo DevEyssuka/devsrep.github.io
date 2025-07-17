@@ -1,6 +1,6 @@
 const projects = [
   {
-    title: "S.U.B.J.E.C.T.S — Игра на Unity/Unreal",
+    title: "S.U.B.J.E.C.T.S — ",
     link: "#",
   },
   {
