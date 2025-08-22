@@ -1,89 +1,57 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DevEyssuka Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проекты</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #0e0e0e; color: #fff; }
+    h1 { text-align: center; }
+    .project-list { list-style: none; padding: 0; }
+    .project-item { margin: 10px 0; padding: 10px; background: #1a1a1a; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+    .project-item:hover { background: #292929; }
+    .project-details { display: none; margin-top: 10px; background: #111; padding: 15px; border-radius: 10px; }
+    .project-details img { max-width: 100%; border-radius: 10px; margin-bottom: 10px; }
+    video, iframe { width: 100%; border-radius: 10px; margin-top: 10px; }
+  </style>
 </head>
 <body>
-  <header class="navbar">
-    <nav>
-      <button class="nav-button active" data-section="authors">Authors</button>
-      <button class="nav-button" data-section="projects">Projects</button>
-      <button class="nav-button" data-section="info">Info</button>
-      <button class="nav-button" data-section="releases">Releases</button>
-    </nav>
-  </header>
-
-  <main class="container">
-    <!-- Authors -->
-    <section id="authors" class="content-section active">
-      <h2>👾 Authors</h2>
-      <div class="authors-list">
-        <!-- Твоя карточка (открыта по умолчанию) -->
-        <div class="author-card active" data-author="dev">
-          <img src="assets/devlogo.png" alt="DevEyes" />
-          <p>DevEyes</p>
-        </div>
-
-        <!-- Другие авторы -->
-        <div class="author-card" data-author="mate1">
-          <img src="assets/mate1.png" alt="Mate1" />
-          <p>Mate #1</p>
-        </div>
-
-        <div class="author-card" data-author="mate2">
-          <img src="assets/mate2.png" alt="Mate2" />
-          <p>Mate #2</p>
-        </div>
+  <h1>Мои проекты</h1>
+  <ul class="project-list">
+    <li class="project-item" onclick="toggleDetails(1)">
+      🚀 Проект 1
+      <div id="details-1" class="project-details">
+        <h2>Название проекта 1</h2>
+        <p><b>Описание:</b> Это мой первый проект.</p>
+        <img src="project1.png" alt="Project 1">
+        <p><b>Авторы:</b> Dev, Team A</p>
+        <video controls>
+          <source src="demo1.mp4" type="video/mp4">
+        </video>
+        <p><b>Результаты:</b> Победа на хакатоне.</p>
       </div>
-
-      <div class="author-info">
-        <!-- По умолчанию твоя инфа -->
-        <div id="author-dev" class="author-details active">
-          <h3>DevEyes</h3>
-          <p>Frontend / Backend / Game Developer</p>
-          <p>Email: <a href="mailto:gamer0ignis0black@gmail.com">gamer0ignis0black@gmail.com</a></p>
-          <p>GitHub: <a href="https://github.com/DevEyssuka" target="_blank">DevEyssuka</a></p>
-        </div>
-
-        <div id="author-mate1" class="author-details">
-          <h3>Mate #1</h3>
-          <p>UI/UX Designer, партнёр по проектам.</p>
-        </div>
-
-        <div id="author-mate2" class="author-details">
-          <h3>Mate #2</h3>
-          <p>Backend dev, отвечает за серверную магию.</p>
-        </div>
+    </li>
+    <li class="project-item" onclick="toggleDetails(2)">
+      🎮 Проект 2
+      <div id="details-2" class="project-details">
+        <h2>Название проекта 2</h2>
+        <p><b>Описание:</b> Игра про выживание.</p>
+        <img src="project2.png" alt="Project 2">
+        <p><b>Авторы:</b> Dev, Team B</p>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        <p><b>Результаты:</b> 1000+ скачиваний.</p>
       </div>
-    </section>
+    </li>
+  </ul>
 
-    <!-- Projects -->
-    <section id="projects" class="content-section">
-      <h2>🚀 Projects</h2>
-      <p>Здесь будут твои проекты.</p>
-    </section>
-
-    <!-- Info -->
-    <section id="info" class="content-section">
-      <h2>ℹ️ Info</h2>
-      <p>Здесь можно расписать философию, цели или историю A.R.C и твоих игр.</p>
-    </section>
-
-    <!-- Releases -->
-    <section id="releases" class="content-section">
-      <h2>📦 Releases</h2>
-      <p>Здесь будет список версий / релизов твоих игр и приложений.</p>
-    </section>
-  </main>
-
-  <div class="watermark">Developed by DEV EYES © 2025</div>
-
-  <script src="script.js"></script>
+  <script>
+    function toggleDetails(id) {
+      let element = document.getElementById("details-" + id);
+      element.style.display = (element.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
+
 
 
